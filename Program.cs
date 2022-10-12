@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddDbContext<ArticulosDBContext>(opt => 
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("ConStr"))
+    opt.UseSqlite(builder.Configuration.GetConnectionString("ConStr"))
 );
 
 var app = builder.Build();
@@ -20,7 +20,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
-   
+
 //}
 app.UseSwagger();
 app.UseSwaggerUI();
